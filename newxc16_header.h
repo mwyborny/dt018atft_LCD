@@ -46,8 +46,6 @@
 #include <libpic30.h>
 #include "TFT_ILI9163C_registers.h"
 #include "mcc_generated_files/spi1.h"
-#include "mcc_generated_files/uart1.h"
-        
 //#include "mcc_generated_files/spi1.c"
 
 void chipinit();
@@ -66,7 +64,8 @@ void drawCircle(uint8_t x0, uint8_t y0, uint8_t radius, uint16_t color);
 uint16_t RGBtoU16(uint16_t r, uint16_t g, uint16_t b);
 void drawFillCircle(uint16_t xCenter, uint16_t yCenter, uint16_t radius, uint16_t color);
 void resetChip();
-uint8_t readByte(uint16_t );
+uint8_t readByte(uint32_t );
+uint8_t writeByte(uint32_t );
 uint16_t getStoreImage(void);
 
 
@@ -581,10 +580,11 @@ void drawFillRect( uint8_t  x0, uint8_t  y0, uint8_t x1, uint8_t y1, uint16_t c 
 
 void drawImage(void)
 {
-    uint16_t addr16, size16, x, n;
+    uint16_t size16, x;
     uint8_t data8, start8;
+    uint32_t addr32 , n32;
     
-   // addr16 = getStoreImage();
+    addr32 = getStoreImage();
     
     size16 = readByte(0x02 );
     
@@ -595,18 +595,19 @@ void drawImage(void)
             
      setAddrWindow(0,0,_GRAMWIDTH - 1, _GRAMHEIGH - 1);
      
-    
-        for(n=0 ; n < 31000; n++)
-           {
+     for(n32 = 0 ; n32 < size16; n32++)
+        {
          
-            SPI1D_ExchangeColor( n + start8 ); 
+         x = readByte(n32 + start8);
+         
+         SPI1D_ExchangeColor( x ); 
+        
         }
-   
      
     
 }
 
-void writeByte(uint16_t addr, uint8_t data)
+void writeByte(uint32_t addr, uint8_t data)
 {
     
     CSLow;
@@ -616,8 +617,8 @@ void writeByte(uint16_t addr, uint8_t data)
     
     CSLow;
     SPI2_Exchange8bit(WR);  //write command
-    
-    SPI2_Exchange8bit(addr >> 8);  //top byte of 16 bit addr
+    SPI2_Exchange8bit(addr >> 16);  
+    SPI2_Exchange8bit(addr >> 8);  
     SPI2_Exchange8bit(addr ); //bottom byte of 16 bit addr
    
     
@@ -631,12 +632,14 @@ void writeByte(uint16_t addr, uint8_t data)
    
 }
  
-uint8_t readByte(uint16_t addr)
+uint8_t readByte(uint32_t addr)
 {
     uint8_t recieve;
     CSLow;
     SPI2_Exchange8bit(RD);
 
+    SPI2_Exchange8bit(addr >> 16);
+    
     SPI2_Exchange8bit(addr >> 8);
     SPI2_Exchange8bit(addr );
  
@@ -666,14 +669,15 @@ uint16_t getStoreImage(void)
     
     
     uint8_t n, x, data, y = 0 ;
-    uint16_t addr, i16;
+    uint16_t  i16;
+    uint32_t addr;
     uint8_t UData[133];
    
-        writeByte( 0x0000,  0xfa);
+        writeByte( 0x000000,  0xfa);
       
         Nop();
         
-        n = readByte(0x0000);
+        n = readByte(0x000000);
         
         Nop();
 
@@ -745,14 +749,4 @@ uint16_t getStoreImage(void)
  done:
  TMR1_Stop();
  return addr;
-}
-
-void clearUART1FIFO()
-{
-    IFlag = 1;   //Clear the FIFO. 
-    UART1_Read();
-    UART1_Read();
-    UART1_Read();
-    UART1_Read();
-    IFlag = 0;
 }
