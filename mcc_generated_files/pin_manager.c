@@ -38,14 +38,14 @@ void PIN_MANAGER_Initialize(void)
     IOCPDD = 0x0000;
     IOCPDE = 0x0000;
     IOCPDF = 0x0000;
-    IOCPDG = 0x0080;
+    IOCPDG = 0x0000;
     IOCPUA = 0x0000;
     IOCPUB = 0x0000;
     IOCPUC = 0x0000;
     IOCPUD = 0x0000;
     IOCPUE = 0x0000;
     IOCPUF = 0x0000;
-    IOCPUG = 0x0080;
+    IOCPUG = 0x0000;
 
     /****************************************************************************
      * Setting the Open Drain SFR(s)

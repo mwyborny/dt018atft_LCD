@@ -43,21 +43,20 @@
 */
 
 #include "mcc.h"
-#include "spi2.h"
-#include "spi1.h"
-#include "interrupt_manager.h"
-#include "traps.h"
 #include "uart1.h"
 #include "oc3.h"
-#include "tmr2.h"
+#include "interrupt_manager.h"
+#include "traps.h"
 #include "tmr1.h"
-
+#include "spi1.h"
+#include "tmr2.h"
+#include "spi2.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
+    OSCILLATOR_Initialize();
     OC3_Initialize();
     SPI1_Initialize();
     SPI2_Initialize();

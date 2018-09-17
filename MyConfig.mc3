@@ -9,12 +9,12 @@
          <string>class com.microchip.mcc.mcu16.modules.spi_upb.SPI</string>
       </entry>
       <entry>
-         <string>Pin Module</string>
-         <string>class com.microchip.mcc.mcu16.pinManager.PinManager</string>
-      </entry>
-      <entry>
          <string>WATCHDOG</string>
          <string>class com.microchip.mcc.mcu16.systemManager.wdt.Wdt</string>
+      </entry>
+      <entry>
+         <string>Pin Module</string>
+         <string>class com.microchip.mcc.mcu16.pinManager.PinManager</string>
       </entry>
       <entry>
          <string>ICD</string>
@@ -45,12 +45,12 @@
          <string>class com.microchip.mcc.mcu16.systemManager.clk.Clock</string>
       </entry>
       <entry>
-         <string>TMR2</string>
-         <string>class com.microchip.mcc.mcu16.modules.tmr.TMR</string>
-      </entry>
-      <entry>
          <string>OC3</string>
          <string>class com.microchip.mcc.mcu16.modules.oc.OC</string>
+      </entry>
+      <entry>
+         <string>TMR2</string>
+         <string>class com.microchip.mcc.mcu16.modules.tmr.TMR</string>
       </entry>
       <entry>
          <string>TMR1</string>
@@ -175,7 +175,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCPUG" settingAlias="IOCPUG7"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPIIMSKL" settingAlias="SRMTEN"/>
@@ -514,12 +514,12 @@
          <value>periodMode</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UBRG" settingAlias="BRG"/>
-         <value>277</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OC3" registerAlias="OCCON2" settingAlias="SYNCSEL" alias="TMR1"/>
          <value>11</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UBRG" settingAlias="BRG"/>
+         <value>277</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="CLKDIV" settingAlias="DOZEN" alias="enabled"/>
@@ -734,11 +734,11 @@
          <value>clear</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="USTA" settingAlias="RIDLE" alias="IDLE"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPICON1H" settingAlias="SPISGNEXT" alias="sign-extended"/>
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPICON1H" settingAlias="SPISGNEXT" alias="sign-extended"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="USTA" settingAlias="RIDLE" alias="IDLE"/>
          <value>1</value>
       </entry>
       <entry>
@@ -1083,7 +1083,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="TCON"/>
-         <value>33058</value>
+         <value>32816</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="TCON"/>
@@ -1311,7 +1311,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TCKPS"/>
-         <value>1:64</value>
+         <value>1:256</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNA" settingAlias="IOCNA10" alias="enabled"/>
@@ -1383,7 +1383,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="AllInterrupts"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCC" settingAlias="ODCC13" alias="enabled"/>
@@ -3646,12 +3646,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1L" settingAlias="SSEN" alias="enabled"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPICON1H" settingAlias="AUDEN" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1L" settingAlias="SSEN" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRC3"/>
@@ -3735,7 +3735,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPI2" name="ClockFrequency"/>
-         <value>4000000.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
+         <value>2666666.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRD4"/>
@@ -4275,7 +4275,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UERI" settingAlias="enable"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRA1"/>
@@ -4434,12 +4434,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART1" registerAlias="UTXREG"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TGATE" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART1" registerAlias="UTXREG"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPIIMSKL" settingAlias="SPIROVEN" alias="disabled"/>
@@ -4495,7 +4495,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="URXI" settingAlias="enable"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISF"/>
@@ -4703,7 +4703,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="RedirectPrintf"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCPDB" settingAlias="IOCPDB15" alias="enabled"/>
@@ -5614,11 +5614,11 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="RTSMD" alias="disabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPIIMSKL" settingAlias="SPITBFEN" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPIIMSKL" settingAlias="SPITBFEN" alias="disabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="RTSMD" alias="disabled"/>
          <value>0</value>
       </entry>
       <entry>
@@ -6018,11 +6018,11 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="URXINV" alias="enabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPIIMSKL" settingAlias="SPITBFEN" alias="enabled"/>
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPIIMSKL" settingAlias="SPITBFEN" alias="enabled"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="URXINV" alias="enabled"/>
          <value>1</value>
       </entry>
       <entry>
@@ -6083,7 +6083,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="IOCPDG"/>
-         <value>128</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPICON1L" settingAlias="ENHBUF"/>
@@ -6799,7 +6799,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="PR" settingAlias="PR"/>
-         <value>25000</value>
+         <value>6250</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCPUE" settingAlias="IOCPUE1"/>
@@ -7235,7 +7235,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="maxPeriod"/>
-         <value>0.26214</value>
+         <value>1.04856</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPICON1L" settingAlias="MODE16" alias="enabled"/>
@@ -7347,7 +7347,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPIBRGL" settingAlias="SPIBRGL"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="FWDT" settingAlias="WDTPS" alias="PS2"/>
@@ -7651,7 +7651,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="clockSourceSelect"/>
-         <value>T1CK</value>
+         <value>FOSC/2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCNE" settingAlias="IOCNE2"/>
@@ -8299,7 +8299,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="IOCPUG"/>
-         <value>128</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ANSB" settingAlias="ANSELB3" alias="digital"/>
@@ -8798,12 +8798,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="prescaledFreq"/>
-         <value>3875.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TCKPS" alias="1:8"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="prescaledFreq"/>
+         <value>3875.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI2" registerAlias="SPICON1L" settingAlias="SSEN" alias="disabled"/>
@@ -8999,7 +8999,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="prescaledFreq"/>
-         <value>250000.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
+         <value>62500.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSB" settingAlias="ANSELB3"/>
@@ -9147,7 +9147,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="UTXI" settingAlias="enable"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISE" settingAlias="TRISE3" alias="output"/>
@@ -9166,12 +9166,12 @@
          <value>27</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="WAKE" alias="disabled"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPISTATL" settingAlias="SPIBUSY"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="WAKE" alias="disabled"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCCON" settingAlias="SOSCEN"/>
@@ -9519,7 +9519,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TECS"/>
-         <value>T1CK</value>
+         <value>SOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNB" settingAlias="IOCNB10" alias="disabled"/>
@@ -9591,7 +9591,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="minPeriod"/>
-         <value>0.000004</value>
+         <value>0.000016</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNA" settingAlias="IOCNA0" alias="disabled"/>
@@ -9623,11 +9623,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="customPR"/>
-         <value>25000</value>
+         <value>6250</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR1" registerAlias="TCON" settingAlias="TCS"/>
-         <value>External</value>
+         <value>FOSC/2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISB" settingAlias="TRISB0"/>
@@ -9835,7 +9835,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCPDG" settingAlias="IOCPDG7"/>
-         <value>enabled</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCNA" settingAlias="IOCNA3" alias="disabled"/>
@@ -10103,7 +10103,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR1" registerAlias="PR"/>
-         <value>25000</value>
+         <value>6250</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="PR"/>
@@ -10163,7 +10163,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPICON1L" settingAlias="CKE"/>
-         <value>Idle to Active</value>
+         <value>Active to Idle</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPISTATL" settingAlias="SPITBF"/>
@@ -10643,7 +10643,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPI2" name="OpMode"/>
-         <value>1</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATD" settingAlias="LATD10" alias="set"/>
@@ -11058,12 +11058,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="LPBACK" alias="disabled"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPISTATL" settingAlias="SPIROV"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="UART1" registerAlias="UMODE" settingAlias="LPBACK" alias="disabled"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI1" registerAlias="SPISTATL" settingAlias="SPIROV"/>
@@ -11910,12 +11910,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="USTA" settingAlias="UTXEN"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR2" registerAlias="TCON" settingAlias="TGATE" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART1" registerAlias="USTA" settingAlias="UTXEN"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCFG" settingAlias="IOCFG14" alias="enabled"/>
@@ -12098,12 +12098,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="SWRXBufferSize"/>
-         <value>8</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OC3" registerAlias="OCCON1" settingAlias="OCTSEL" alias="TMR5"/>
          <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART1" name="SWRXBufferSize"/>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCFA" settingAlias="IOCFA3" alias="disabled"/>
@@ -12563,7 +12563,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR1" name="prescaleDivisor"/>
-         <value>64</value>
+         <value>256</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="FOSCSEL" settingAlias="FNOSC" alias="LPRC"/>
@@ -13398,12 +13398,12 @@
          <value>PRIPLL</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="IGNTUR" alias="enabled"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPI2" name="SPI2_SPIRXIISRFunction"/>
          <value>ISR_SPI2_SPIRXI</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="IGNTUR" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCPUB" settingAlias="IOCPUB8" alias="disabled"/>
@@ -13963,7 +13963,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="SPI2" registerAlias="SPIBRGL"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="DCOCON" settingAlias="DCOEN" alias="disabled"/>
@@ -15735,7 +15735,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="SPI2" registerAlias="SPICON1L"/>
-         <value>32801</value>
+         <value>33057</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ICD" name="customMasterSlaveViewerEnable"/>
@@ -16226,12 +16226,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="AUDMOD" alias="I2S"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="SPI2" registerAlias="SPICON1L" settingAlias="DISSDO"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI1" registerAlias="SPICON1H" settingAlias="AUDMOD" alias="I2S"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="IOCPG" settingAlias="IOCPG0"/>
@@ -16333,19 +16333,19 @@
       </entry>
       <entry>
          <file>mcc_generated_files\spi2.c</file>
-         <hash>df6750d5a64ded93d8ef1da9a427486178854b1f6085009dd6f34213cb658d70</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\spi1.c</file>
-         <hash>59e1eeb8d0b37010af56a917f467fafe25abe9002bf17150fb19877e5f80554b</hash>
+         <hash>ee67b46d4f9b89712df5966732b9f57ed51a2a838d262680acffe06732c3dc6b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
          <hash>ea97b8c537f6e5a82021136c197a0ee015b74330e281e797617b9fe3c731b026</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\spi1.c</file>
+         <hash>59e1eeb8d0b37010af56a917f467fafe25abe9002bf17150fb19877e5f80554b</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>c0c496d3bb228e0d072d36ea924919445b449ccc574cae089915c7fa0a19ebb2</hash>
+         <hash>ccdc245a09785c4694ac780ae108f7b971f42ecc852746c8f4f7577c9759b546</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
@@ -16357,15 +16357,15 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>f4b98d5a2d5efff6e375f4019dd5b37543df8b2af3a59f946a7ee11b9fd1d84b</hash>
+         <hash>3ff229c196900ec8386f5f8fc61bdddf4ca54496146ae01f48b03e880a2f5231</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart1.h</file>
-         <hash>393843ac86298003d31148a294477db457372802faa51e091d8c5bc843e67943</hash>
+         <hash>d03d971da65f51449d8c91f8d377bb1e772855cf077a257df01af033bae3f6e0</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart1.c</file>
-         <hash>af35ed967f93133bde030c79a83a1364acd7de0f90e3a2f4884ee1610fc6d49a</hash>
+         <hash>4a95ff5eb94f2f32340ab7b80f9f443f36c53c82804a4f68bcdc1e32d9b5ff19</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr1.h</file>
@@ -16393,7 +16393,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\tmr1.c</file>
-         <hash>37d009a966f35abfcd9b5cf032d27dcaa23fb6dbb7ef81da5bc16c824445713c</hash>
+         <hash>5255784803d02f04fcee264affe01daa6ae16ad72d70efd13d36c96ce4ce2e66</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc3.h</file>
@@ -16401,7 +16401,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>902272f60be57f3fb48fb231ac3abdb9bb88f21b40e7a6939ae6afe1ad162b0e</hash>
+         <hash>92ca2e1b313680992bea1bea8c652915a90ca4d0a49c0fa10533bb510bdafb99</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc3.c</file>
@@ -16417,7 +16417,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>840f1573e8f7e4a55e200ef8939e7de7a7b890af948f7fdde9f18f6a6d50d70f</hash>
+         <hash>885f7b78467c26d5ba4dc53489529b36e80cd5a7c834d54c5cfaae162d0cd6cd</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

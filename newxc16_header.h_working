@@ -65,7 +65,7 @@ uint16_t RGBtoU16(uint16_t r, uint16_t g, uint16_t b);
 void drawFillCircle(uint16_t xCenter, uint16_t yCenter, uint16_t radius, uint16_t color);
 void resetChip();
 uint8_t readByte(uint32_t );
-uint8_t writeByte(uint32_t );
+void writeByte(uint32_t, uint8_t);
 uint16_t getStoreImage(void);
 
 
@@ -74,6 +74,7 @@ uint8_t rotation = 0;
 uint8_t _width;
 uint8_t _height;
 uint8_t	_colorspaceData = 0x00;
+uint16_t timeout;
 
 extern bool IFlag;
 
@@ -582,11 +583,11 @@ void drawImage(void)
 {
     uint16_t size16, x;
     uint8_t data8, start8;
-    uint32_t addr32 , n32;
+    uint32_t addr32 ,size32, n32;
     
     addr32 = getStoreImage();
     
-    size16 = readByte(0x02 );
+   size16 = readByte(0x000002 );
     
     
     size16 = size16  | readByte(0x03) << 8  ;
@@ -613,7 +614,7 @@ void writeByte(uint32_t addr, uint8_t data)
     CSLow;
     SPI2_Exchange8bit(WREN);  //wren bit
     CSHigh;
-    Nop();
+    //Nop();
     
     CSLow;
     SPI2_Exchange8bit(WR);  //write command
@@ -668,16 +669,16 @@ uint16_t getStoreImage(void)
     //SYSTEM_Initialize();
     
     
-    uint8_t n, x, data, y = 0 ;
-    uint16_t  i16;
+    uint8_t n, x = 0, data, y = 0 ;
+    uint16_t  i16, sizeofBMP;
     uint32_t addr;
-    uint8_t UData[133];
+    uint8_t UData[133], UDatab[133],UDatac[133];
    
         writeByte( 0x000000,  0xfa);
       
         Nop();
         
-        n = readByte(0x000000);
+        n = readByte(y);
         
         Nop();
 
@@ -690,56 +691,85 @@ uint16_t getStoreImage(void)
     
     addr = 0;
     
-    IFlag = 1;   //Clear the FIFO. 
-    UART1_Read();
-    UART1_Read();
-    UART1_Read();
-    UART1_Read();
+ 
+    timeout = 0;
+    n = U1RXREG;
+    n = U1RXREG;
+    n = U1RXREG;
+    n = U1RXREG;
+    
     IFlag = 0;
+    uint8_t when[10] ;
     
     while(!( U1STAbits.URXDA == 1) )
       {
-
        // delay_ms(1000);
         printf("%c", 0x43);
        // delay_ms(1);
       }
+    
     TMR1_Start();
+    
     while(1)
      {
          for(i16 = 0; i16 < 133; i16++)
              {
                 UData[i16] = UART1_Read();
-            }
+                if(IFlag == 1)
+                {
+                   IFlag = 0;
+                }
+             }
          
-         if(IFlag == 1)
-            {
-                IFlag = 0;
-                if(UData[0] == NAK)
-                    {
-                        printf("ACK");
-                 
-                        if(ETB == UART1_Read() )
-                            {
-                                printf("ACK");
-                                goto done;
-                            }
-                    }
-            }
-             
+          TMR1_Counter16BitSet(0);
+          printf("%c",ACK);
+          for(i16 = 0; i16 < 133; i16++)
+             {
+                UDatab[i16] = UART1_Read();
+                if(IFlag == 1)
+                {
+                     IFlag = 0;
+                    if(UDatab[1] == EOT)
+                        goto c;
+                 }
+             }
+          
+          
+          c:
+           TMR1_Counter16BitSet(0);
+          printf("%c",ACK);
+          
+          for(i16 = 0; i16 < 133; i16++)
+             {
+                UDatac[i16] = UART1_Read();
+                if(IFlag == 1)
+                {
+                   IFlag = 0;
+                   printf("%c",ACK);
+                       goto d;
+                   }
+             }
+         
+          d:
+         
          TMR1_Stop();
-         
-         if(addr >= 31000)
-         {
-             goto done;
-         }
-        
-         for(n = 3;n<128;n++)
+          
+//         if(addr == 0)
+//         {
+//             sizeofBMP = UData[6] << 8 | UData[5];
+//         }
+//         
+//         if(addr >= sizeofBMP)   
+//         {
+//             goto done;
+//         }
+//        
+         for(n = 3;n<131;n++)
              {
                 writeByte(addr++, UData[n]);
              }
        
-         TMR1 = 0;
+         TMR1_Counter16BitSet(0);
          TMR1_Start();
          printf("%c",ACK);
         }   

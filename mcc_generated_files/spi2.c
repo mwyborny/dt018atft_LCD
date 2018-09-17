@@ -86,8 +86,8 @@ void SPI2_Initialize (void)
     SPI2CON2L = 0x00;
     // SPIROV disabled; FRMERR disabled; 
     SPI2STATL = 0x00;
-    // SPI2BRGL 0; 
-    SPI2BRGL = 0x00;
+    // SPI2BRGL 2; 
+    SPI2BRGL = 0x02;
     // SPITBFEN disabled; SPITUREN disabled; FRMERREN disabled; SRMTEN disabled; SPIRBEN disabled; BUSYEN disabled; SPITBEN disabled; SPIROVEN disabled; SPIRBFEN disabled; 
     SPI2IMSKL = 0x00;
     // RXMSK 0; TXWIEN disabled; TXMSK 0; RXWIEN disabled; 
@@ -96,8 +96,8 @@ void SPI2_Initialize (void)
     SPI2URDTL = 0x00;
     // SPI2URDTH 0; 
     SPI2URDTH = 0x00;
-    // SPIEN enabled; DISSDO disabled; MCLKEN FOSC/2; CKP Idle:Low, Active:High; SSEN disabled; MSTEN Master; MODE16 disabled; SMP Middle; DISSCK disabled; SPIFE Frame Sync pulse precedes; CKE Idle to Active; MODE32 disabled; SPISIDL disabled; ENHBUF enabled; DISSDI disabled; 
-    SPI2CON1L = 0x8021;
+    // SPIEN enabled; DISSDO disabled; MCLKEN FOSC/2; CKP Idle:Low, Active:High; SSEN disabled; MSTEN Master; MODE16 disabled; SMP Middle; DISSCK disabled; SPIFE Frame Sync pulse precedes; CKE Active to Idle; MODE32 disabled; SPISIDL disabled; ENHBUF enabled; DISSDI disabled; 
+    SPI2CON1L = 0x8121;
 
 }
 

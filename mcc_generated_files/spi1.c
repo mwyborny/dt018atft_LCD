@@ -70,7 +70,7 @@ typedef enum {
 }SPI1_TRANSFER_MODE;
 
 inline __attribute__((__always_inline__)) SPI1_TRANSFER_MODE SPI1_TransferModeGet(void);
-void SPI1_Exchange( uint16_t *pTransmitData, uint16_t *pReceiveData );
+void SPI1_Exchange( uint8_t *pTransmitData, uint8_t *pReceiveData );
 uint16_t SPI1_ExchangeBuffer(uint8_t *pTransmitData, uint16_t byteCount, uint8_t *pReceiveData);
 
 /**
@@ -101,7 +101,7 @@ void SPI1_Initialize (void)
 
 }
 
-void SPI1_Exchange( uint16_t *pTransmitData, uint16_t *pReceiveData )
+void SPI1_Exchange( uint8_t *pTransmitData, uint8_t *pReceiveData )
 {
 
     while( SPI1STATLbits.SPITBF == true )
@@ -117,6 +117,7 @@ void SPI1_Exchange( uint16_t *pTransmitData, uint16_t *pReceiveData )
     }
 
     *((uint16_t*)pReceiveData) = SPI1BUFL;
+
 }
 
 uint16_t SPI1_ExchangeBuffer(uint8_t *pTransmitData, uint16_t byteCount, uint8_t *pReceiveData)

@@ -5,8 +5,8 @@
  * Created on August 15, 2018, 4:47 PM
  */
 
-#define FOSC 8000000L
-#define FCY 8000000UL
+#define FOSC 32000000L
+#define FCY 16000000UL
 #define delay_ms __delay_ms 
 #include "xc.h"
 #include "mcc_generated_files/mcc.h"

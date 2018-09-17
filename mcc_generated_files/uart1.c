@@ -6,6 +6,7 @@
 #include "uart1.h"
 
 extern bool IFlag;
+extern uint16_t timeout;
 
 /**
   Section: UART1 APIs
@@ -27,21 +28,8 @@ void UART1_Initialize(void)
     // ADMADDR 0; ADMMASK 0; 
     U1ADMD = 0x00;
     
-    IEC0bits.U1RXIE = 1;
-    
-    //Make sure to set LAT bit corresponding to TxPin as high before UART initialization
-    
     U1MODEbits.UARTEN = 1;  // enabling UARTEN bit
     U1STAbits.UTXEN = 1; 
-
-    uart1_obj.txHead = uart1_txByteQ;
-    uart1_obj.txTail = uart1_txByteQ;
-    uart1_obj.rxHead = uart1_rxByteQ;
-    uart1_obj.rxTail = uart1_rxByteQ;
-    uart1_obj.rxStatus.s.empty = true;
-    uart1_obj.txStatus.s.empty = true;
-    uart1_obj.txStatus.s.full = false;
-    uart1_obj.rxStatus.s.full = false;
 }
 
 uint8_t UART1_Read(void)
@@ -50,13 +38,11 @@ uint8_t UART1_Read(void)
     {
         if(IFlag == 1)
         {
-            IFlag = 0;
-            printf("%c", 0x06 );
-            break;
+          goto exit;
         }
         
     }
-
+    exit:
     if ((U1STAbits.OERR == 1))
     {
         U1STAbits.OERR = 0;
@@ -80,4 +66,14 @@ uint16_t UART1_StatusGet (void)
     return U1STA;
 }
 
+int __attribute__((__section__(".libc.write"))) write(int handle, void *buffer, unsigned int len) {
+    int i;
+    while(U1STAbits.TRMT == 0);  
+    for (i = len; i; --i)
+    {
+        while(U1STAbits.TRMT == 0);
+        U1TXREG = *(char*)buffer++;        
+    }
+    return(len);
+}
 
