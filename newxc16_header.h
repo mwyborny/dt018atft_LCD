@@ -585,7 +585,7 @@ void drawImage(void)
     uint8_t data8, start8;
     uint32_t addr32 ,size32, n32;
     
-  //  addr32 = getStoreImage();
+    addr32 = getStoreImage();
     
    size16 = readByte(0x00000002 );
     
@@ -597,7 +597,7 @@ void drawImage(void)
      setAddrWindow(0,0,_GRAMWIDTH - 1, _GRAMHEIGH - 1);
 
      
-     for(n32 = 0 ; n32 < size16 / 2; n32 +=2)
+     for(n32 = 0 ; n32 < size16 ; n32 +=2)
         {
          
          x = readByte(n32 + start8) ;
@@ -632,6 +632,7 @@ void write128Byte(uint32_t addr, uint8_t *data)
     }
    
     CSHigh;
+    delay_ms(10);
       
    
 }
@@ -656,6 +657,7 @@ void writeByte(uint32_t addr, uint8_t data)
     Nop();
    
     CSHigh;
+     delay_ms(10);
       
    
 }
@@ -665,8 +667,8 @@ uint8_t readByte(uint32_t addr)
     uint8_t recieve, a,b,c;
     CSLow;
     SPI2_Exchange8bit(RD);
-    Nop();
-    Nop();
+  //  Nop();
+  //  Nop();
     
     
     a = addr >> 16;
@@ -676,18 +678,18 @@ uint8_t readByte(uint32_t addr)
     
     SPI2_Exchange8bit(addr >> 8);
     SPI2_Exchange8bit(addr );
-    Nop();
-     Nop();
+  //  Nop();
+   //  Nop();
      
-      Nop();
-       Nop();
+    //  Nop();
+     //  Nop();
  
     recieve = SPI2_Exchange8bit(0);
     
     // recieve = SPI2_Exchange8bit(0);
     
     CSHigh;
-     delay_ms(1);
+    // delay_ms(1);
     
     return recieve;
 }
@@ -746,30 +748,27 @@ uint16_t getStoreImage(void)
        // delay_ms(1);
       }
     
-    TMR1_Start();
     
+  //  TMR1_Start();
+    TMR1_Stop();
     while(1)
      {
-         for(i16 = 0; i16 < 133; i16++)
+        again:
+         for(i16 = 0; i16 < 133; i16++)  // 133 looks like 133 is the correct size. not sure, drinking now.
+             
              {
                 UData[i16] = UART1_Read();
-                if(IFlag == 1)
+                if(UData[0] == EOT)
                 {
-                    TMR1_Counter16BitSet(0);
-                    IFlag = 0;
-                    timeout++;
+                    printf("%c",ACK);
+                    printf("%c",ACK);
+                    goto done;
+                }
                     
-                    if(UData[0] == EOT )
-                    {
-                      //  printf("%c",ACK);
-                      //  printf("%c",ACK);
-                        x++;
-                        goto done;
-                    }
-                 }
              }
+     
           
-         TMR1_Stop();
+         //TMR1_Stop();
           
          if(addr == 0)
          {
@@ -789,21 +788,21 @@ uint16_t getStoreImage(void)
          write128Byte(addr, &UData[3]);
          addr += 128;
           
-         TMR1_Counter16BitSet(0);
-         TMR1_Start();
+      //   TMR1_Counter16BitSet(0);
+      //   TMR1_Start();
          printf("%c",ACK);
            
-    
     }
+    
          
  done:
 // TMR1_Stop();
-// 
-// for(n=0;n<128;n++)
-// {
-//     printf("%x ", readByte(n) );
-//    // delay_ms(5);
-// }
- TMR1_Stop();
+ 
+ for(n=0;n<128;n++)
+ {
+     printf("%x ", readByte(n) );
+    // delay_ms(5);
+ }
+ //TMR1_Stop();
  return addr;
 }

@@ -89,14 +89,12 @@ void TMR1_Initialize (void)
 {
     //TMR1 0; 
     TMR1 = 0x00;
-    //Period = 0.1 s; Frequency = 16000000 Hz; PR1 6250; 
-    PR1 = 0x186A;
-    //TCKPS 1:256; TON enabled; TSIDL disabled; TCS FOSC/2; TECS SOSC; TSYNC disabled; TGATE disabled; 
-    T1CON = 0x8030;
+    //Period = 0.4 s; Frequency = 16000000 Hz; PR1 25000; 
+    PR1 = 0x61A8;
+    //TCKPS 1:256; TON disabled; TSIDL disabled; TCS FOSC/2; TECS SOSC; TSYNC disabled; TGATE disabled; 
+    T1CON = 0x30;
 
     
-    IFS0bits.T1IF = false;
-    IEC0bits.T1IE = true;
 	
     tmr1_obj.timerElapsed = false;
 
@@ -104,23 +102,15 @@ void TMR1_Initialize (void)
 
 
 
-void __attribute__ ( ( interrupt, no_auto_psv ) ) _T1Interrupt (  )
+void TMR1_Tasks_16BitOperation( void )
 {
     /* Check if the Timer Interrupt/Status is set */
-
-    //***User Area Begin
-
-    // ticker function call;
-    // ticker is 1 -> Callback function gets called everytime this ISR executes
-    TMR1_CallBack();
-
-    IFlag = 1;
-    
-    //***User Area End
-
+    if(IFS0bits.T1IF)
+    {
     tmr1_obj.count++;
     tmr1_obj.timerElapsed = true;
     IFS0bits.T1IF = false;
+}
 }
 
 
@@ -151,18 +141,12 @@ uint16_t TMR1_Counter16BitGet( void )
 }
 
 
-void __attribute__ ((weak)) TMR1_CallBack(void)
-{
-    // Add your custom callback code here
-}
 
 void TMR1_Start( void )
 {
     /* Reset the status information */
     tmr1_obj.timerElapsed = false;
 
-    /*Enable the interrupt*/
-    IEC0bits.T1IE = true;
 
     /* Start the Timer */
     T1CONbits.TON = 1;
@@ -173,8 +157,6 @@ void TMR1_Stop( void )
     /* Stop the Timer */
     T1CONbits.TON = false;
 
-    /*Disable the interrupt*/
-    IEC0bits.T1IE = false;
 }
 
 bool TMR1_GetElapsedThenClear(void)

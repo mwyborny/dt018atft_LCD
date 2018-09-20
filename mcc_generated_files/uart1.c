@@ -38,6 +38,7 @@ uint8_t UART1_Read(void)
     {
         if(IFlag == 1)
         {
+            TMR1_Counter16BitSet(0);
           goto exit;
         }
         
