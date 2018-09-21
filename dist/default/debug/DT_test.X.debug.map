@@ -4,13 +4,13 @@ Tool Name:
   c:\program files (x86)\microchip\xc16\v1.35\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.00 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.01 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.02 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.03 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.04 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.05 \
-  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002570.06 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.00 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.01 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.02 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.03 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.04 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.05 \
+  -TC:\\Users\\mwyborny\\AppData\\Local\\Temp\\tmp00002354.06 \
   -p24FJ1024GB610 \
   -o \
   dist/default/debug/DT_test.X.debug.elf \
@@ -226,13 +226,13 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100              0x1946          0x25e9  (9705)
 .const                      0x1a46                0x84            0xc6  (198)
-.text                       0x1aca              0x1692          0x21db  (8667)
-.dinit                      0x315c                0xf2           0x16b  (363)
-.text                       0x324e               0x248           0x36c  (876)
-.init.delay32               0x3496                0x1c            0x2a  (42)
-.text                       0x34b2                0x40            0x60  (96)
+.text                       0x1aca              0x1698          0x21e4  (8676)
+.dinit                      0x3162                0xf2           0x16b  (363)
+.text                       0x3254               0x248           0x36c  (876)
+.init.delay32               0x349c                0x1c            0x2a  (42)
+.text                       0x34b8                0x40            0x60  (96)
 
-                 Total "program" memory used (bytes):         0x4deb  (19947) 1%
+                 Total "program" memory used (bytes):         0x4df4  (19956) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x8000]
@@ -464,151 +464,151 @@ External Symbols in Program Memory (by address):
                   0x00230c                  _resetChip
                   0x002328                  _drawFillRect
                   0x00236a                  _drawImage
-                  0x0023ee                  _write128Byte
-                  0x00244c                  _writeByte
-                  0x00248e                  _readByte
-                  0x0024e2                  _clearTMR1
-                  0x0024ee                  _getStoreImage
-                  0x00264a                  _drawClock
-                  0x00265a                  _drawClockFace
-                  0x0027aa                  _setup_clock
-                  0x0027de                  _drawClockHands
-                  0x002b9e                  _main
-                  0x002bb8                  _SPI1_Initialize
-                  0x002bd6                  _SPI1_Exchange
-                  0x002c02                  _SPI1_ExchangeBuffer
-                  0x002ccc                  _SPI1D_ExchangeColor
-                  0x002cfa                  _SPI1D_Exchange8bit
-                  0x002d12                  _SPI1C_Exchange8bit
-                  0x002d28                  _SPI1_WR8bit
-                  0x002d3e                  _SPI1_Exchange8bitBuffer
-                  0x002d52                  _SPI1_TransferModeGet
-                  0x002d76                  _SPI1_StatusGet
-                  0x002d7e                  _OC3_Initialize
-                  0x002d9c                  _OC3_Tasks
-                  0x002dae                  _OC3_Start
-                  0x002dc8                  _OC3_Stop
-                  0x002dd6                  _OC3_SingleCompareValueSet
-                  0x002de2                  _OC3_DualCompareValueSet
-                  0x002df4                  _OC3_CentreAlignedPWMConfig
-                  0x002e06                  _OC3_EdgeAlignedPWMConfig
-                  0x002e18                  _OC3_SecondaryValueSet
-                  0x002e24                  _OC3_PrimaryValueSet
-                  0x002e30                  _OC3_IsCompareCycleComplete
-                  0x002e48                  _OC3_FaultStatusGet
-                  0x002e9e                  _OC3_FaultStatusClear
-                  0x002ec2                  _OC3_ManualTriggerSet
-                  0x002eca                  _OC3_TriggerStatusGet
-                  0x002ee2                  _OC3_TriggerStatusClear
-                  0x002eea                  _SPI2_Initialize
-                  0x002f06                  _SPI2_Exchange
-                  0x002f36                  _SPI2_ExchangeBuffer
-                  0x003000                  _SPI2_Exchange8bit
-                  0x003010                  _SPI2_Exchange8bitBuffer
-                  0x003024                  _SPI2_TransferModeGet
-                  0x003048                  _SPI2_StatusGet
-                  0x003050                  _PIN_MANAGER_Initialize
-                  0x00324e                  _TMR2_Initialize
-                  0x003264                  _TMR2_Tasks_16BitOperation
-                  0x003286                  _TMR2_Period16BitSet
-                  0x003298                  _TMR2_Period16BitGet
-                  0x0032a0                  _TMR2_Counter16BitSet
-                  0x0032b2                  _TMR2_Counter16BitGet
-                  0x0032ba                  _TMR2_Start
-                  0x0032c8                  _TMR2_Stop
-                  0x0032d0                  _TMR2_GetElapsedThenClear
-                  0x0032e8                  _TMR2_SoftwareCounterGet
-                  0x0032f4                  _TMR2_SoftwareCounterClear
-                  0x003300                  _TMR1_Initialize
-                  0x003316                  _TMR1_Tasks_16BitOperation
-                  0x003336                  _TMR1_Period16BitSet
-                  0x003348                  _TMR1_Period16BitGet
-                  0x003350                  _TMR1_Counter16BitSet
-                  0x003362                  _TMR1_Counter16BitGet
-                  0x00336a                  _TMR1_Start
-                  0x003378                  _TMR1_Stop
-                  0x003380                  _TMR1_GetElapsedThenClear
-                  0x003398                  _TMR1_SoftwareCounterGet
-                  0x0033a4                  _TMR1_SoftwareCounterClear
-                  0x0033b0                  _UART1_Initialize
-                  0x0033c8                  _UART1_Read
-                  0x0033f2                  _UART1_Write
-                  0x00340a                  _UART1_StatusGet
-                  0x003412                  _CLOCK_Initialize
-                  0x003454                  _OSCILLATOR_Initialize
-                  0x003496                  ___delay32
-                  0x0034ca                  _SYSTEM_Initialize
-                  0x0034e2                  _INTERRUPT_Initialize
+                  0x0023f4                  _write128Byte
+                  0x002452                  _writeByte
+                  0x002494                  _readByte
+                  0x0024e8                  _clearTMR1
+                  0x0024f4                  _getStoreImage
+                  0x002650                  _drawClock
+                  0x002660                  _drawClockFace
+                  0x0027b0                  _setup_clock
+                  0x0027e4                  _drawClockHands
+                  0x002ba4                  _main
+                  0x002bbe                  _SPI1_Initialize
+                  0x002bdc                  _SPI1_Exchange
+                  0x002c08                  _SPI1_ExchangeBuffer
+                  0x002cd2                  _SPI1D_ExchangeColor
+                  0x002d00                  _SPI1D_Exchange8bit
+                  0x002d18                  _SPI1C_Exchange8bit
+                  0x002d2e                  _SPI1_WR8bit
+                  0x002d44                  _SPI1_Exchange8bitBuffer
+                  0x002d58                  _SPI1_TransferModeGet
+                  0x002d7c                  _SPI1_StatusGet
+                  0x002d84                  _OC3_Initialize
+                  0x002da2                  _OC3_Tasks
+                  0x002db4                  _OC3_Start
+                  0x002dce                  _OC3_Stop
+                  0x002ddc                  _OC3_SingleCompareValueSet
+                  0x002de8                  _OC3_DualCompareValueSet
+                  0x002dfa                  _OC3_CentreAlignedPWMConfig
+                  0x002e0c                  _OC3_EdgeAlignedPWMConfig
+                  0x002e1e                  _OC3_SecondaryValueSet
+                  0x002e2a                  _OC3_PrimaryValueSet
+                  0x002e36                  _OC3_IsCompareCycleComplete
+                  0x002e4e                  _OC3_FaultStatusGet
+                  0x002ea4                  _OC3_FaultStatusClear
+                  0x002ec8                  _OC3_ManualTriggerSet
+                  0x002ed0                  _OC3_TriggerStatusGet
+                  0x002ee8                  _OC3_TriggerStatusClear
+                  0x002ef0                  _SPI2_Initialize
+                  0x002f0c                  _SPI2_Exchange
+                  0x002f3c                  _SPI2_ExchangeBuffer
+                  0x003006                  _SPI2_Exchange8bit
+                  0x003016                  _SPI2_Exchange8bitBuffer
+                  0x00302a                  _SPI2_TransferModeGet
+                  0x00304e                  _SPI2_StatusGet
+                  0x003056                  _PIN_MANAGER_Initialize
+                  0x003254                  _TMR2_Initialize
+                  0x00326a                  _TMR2_Tasks_16BitOperation
+                  0x00328c                  _TMR2_Period16BitSet
+                  0x00329e                  _TMR2_Period16BitGet
+                  0x0032a6                  _TMR2_Counter16BitSet
+                  0x0032b8                  _TMR2_Counter16BitGet
+                  0x0032c0                  _TMR2_Start
+                  0x0032ce                  _TMR2_Stop
+                  0x0032d6                  _TMR2_GetElapsedThenClear
+                  0x0032ee                  _TMR2_SoftwareCounterGet
+                  0x0032fa                  _TMR2_SoftwareCounterClear
+                  0x003306                  _TMR1_Initialize
+                  0x00331c                  _TMR1_Tasks_16BitOperation
+                  0x00333c                  _TMR1_Period16BitSet
+                  0x00334e                  _TMR1_Period16BitGet
+                  0x003356                  _TMR1_Counter16BitSet
+                  0x003368                  _TMR1_Counter16BitGet
+                  0x003370                  _TMR1_Start
+                  0x00337e                  _TMR1_Stop
+                  0x003386                  _TMR1_GetElapsedThenClear
+                  0x00339e                  _TMR1_SoftwareCounterGet
+                  0x0033aa                  _TMR1_SoftwareCounterClear
+                  0x0033b6                  _UART1_Initialize
+                  0x0033ce                  _UART1_Read
+                  0x0033f8                  _UART1_Write
+                  0x003410                  _UART1_StatusGet
+                  0x003418                  _CLOCK_Initialize
+                  0x00345a                  _OSCILLATOR_Initialize
+                  0x00349c                  ___delay32
+                  0x0034d0                  _SYSTEM_Initialize
+                  0x0034e8                  _INTERRUPT_Initialize
                   0x0abf00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x003412                  _CLOCK_Initialize
+                  0x003418                  _CLOCK_Initialize
                   0x001e64                  _HLine
-                  0x0034e2                  _INTERRUPT_Initialize
-                  0x002df4                  _OC3_CentreAlignedPWMConfig
-                  0x002de2                  _OC3_DualCompareValueSet
-                  0x002e06                  _OC3_EdgeAlignedPWMConfig
-                  0x002e9e                  _OC3_FaultStatusClear
-                  0x002e48                  _OC3_FaultStatusGet
-                  0x002d7e                  _OC3_Initialize
-                  0x002e30                  _OC3_IsCompareCycleComplete
-                  0x002ec2                  _OC3_ManualTriggerSet
-                  0x002e24                  _OC3_PrimaryValueSet
-                  0x002e18                  _OC3_SecondaryValueSet
-                  0x002dd6                  _OC3_SingleCompareValueSet
-                  0x002dae                  _OC3_Start
-                  0x002dc8                  _OC3_Stop
-                  0x002d9c                  _OC3_Tasks
-                  0x002ee2                  _OC3_TriggerStatusClear
-                  0x002eca                  _OC3_TriggerStatusGet
-                  0x003454                  _OSCILLATOR_Initialize
-                  0x003050                  _PIN_MANAGER_Initialize
+                  0x0034e8                  _INTERRUPT_Initialize
+                  0x002dfa                  _OC3_CentreAlignedPWMConfig
+                  0x002de8                  _OC3_DualCompareValueSet
+                  0x002e0c                  _OC3_EdgeAlignedPWMConfig
+                  0x002ea4                  _OC3_FaultStatusClear
+                  0x002e4e                  _OC3_FaultStatusGet
+                  0x002d84                  _OC3_Initialize
+                  0x002e36                  _OC3_IsCompareCycleComplete
+                  0x002ec8                  _OC3_ManualTriggerSet
+                  0x002e2a                  _OC3_PrimaryValueSet
+                  0x002e1e                  _OC3_SecondaryValueSet
+                  0x002ddc                  _OC3_SingleCompareValueSet
+                  0x002db4                  _OC3_Start
+                  0x002dce                  _OC3_Stop
+                  0x002da2                  _OC3_Tasks
+                  0x002ee8                  _OC3_TriggerStatusClear
+                  0x002ed0                  _OC3_TriggerStatusGet
+                  0x00345a                  _OSCILLATOR_Initialize
+                  0x003056                  _PIN_MANAGER_Initialize
                   0x0021d2                  _RGBtoU16
-                  0x002d12                  _SPI1C_Exchange8bit
-                  0x002cfa                  _SPI1D_Exchange8bit
-                  0x002ccc                  _SPI1D_ExchangeColor
-                  0x002bd6                  _SPI1_Exchange
-                  0x002d3e                  _SPI1_Exchange8bitBuffer
-                  0x002c02                  _SPI1_ExchangeBuffer
-                  0x002bb8                  _SPI1_Initialize
-                  0x002d76                  _SPI1_StatusGet
-                  0x002d52                  _SPI1_TransferModeGet
-                  0x002d28                  _SPI1_WR8bit
-                  0x002f06                  _SPI2_Exchange
-                  0x003000                  _SPI2_Exchange8bit
-                  0x003010                  _SPI2_Exchange8bitBuffer
-                  0x002f36                  _SPI2_ExchangeBuffer
-                  0x002eea                  _SPI2_Initialize
-                  0x003048                  _SPI2_StatusGet
-                  0x003024                  _SPI2_TransferModeGet
-                  0x0034ca                  _SYSTEM_Initialize
-                  0x003362                  _TMR1_Counter16BitGet
-                  0x003350                  _TMR1_Counter16BitSet
-                  0x003380                  _TMR1_GetElapsedThenClear
-                  0x003300                  _TMR1_Initialize
-                  0x003348                  _TMR1_Period16BitGet
-                  0x003336                  _TMR1_Period16BitSet
-                  0x0033a4                  _TMR1_SoftwareCounterClear
-                  0x003398                  _TMR1_SoftwareCounterGet
-                  0x00336a                  _TMR1_Start
-                  0x003378                  _TMR1_Stop
-                  0x003316                  _TMR1_Tasks_16BitOperation
-                  0x0032b2                  _TMR2_Counter16BitGet
-                  0x0032a0                  _TMR2_Counter16BitSet
-                  0x0032d0                  _TMR2_GetElapsedThenClear
-                  0x00324e                  _TMR2_Initialize
-                  0x003298                  _TMR2_Period16BitGet
-                  0x003286                  _TMR2_Period16BitSet
-                  0x0032f4                  _TMR2_SoftwareCounterClear
-                  0x0032e8                  _TMR2_SoftwareCounterGet
-                  0x0032ba                  _TMR2_Start
-                  0x0032c8                  _TMR2_Stop
-                  0x003264                  _TMR2_Tasks_16BitOperation
-                  0x0033b0                  _UART1_Initialize
-                  0x0033c8                  _UART1_Read
-                  0x00340a                  _UART1_StatusGet
-                  0x0033f2                  _UART1_Write
+                  0x002d18                  _SPI1C_Exchange8bit
+                  0x002d00                  _SPI1D_Exchange8bit
+                  0x002cd2                  _SPI1D_ExchangeColor
+                  0x002bdc                  _SPI1_Exchange
+                  0x002d44                  _SPI1_Exchange8bitBuffer
+                  0x002c08                  _SPI1_ExchangeBuffer
+                  0x002bbe                  _SPI1_Initialize
+                  0x002d7c                  _SPI1_StatusGet
+                  0x002d58                  _SPI1_TransferModeGet
+                  0x002d2e                  _SPI1_WR8bit
+                  0x002f0c                  _SPI2_Exchange
+                  0x003006                  _SPI2_Exchange8bit
+                  0x003016                  _SPI2_Exchange8bitBuffer
+                  0x002f3c                  _SPI2_ExchangeBuffer
+                  0x002ef0                  _SPI2_Initialize
+                  0x00304e                  _SPI2_StatusGet
+                  0x00302a                  _SPI2_TransferModeGet
+                  0x0034d0                  _SYSTEM_Initialize
+                  0x003368                  _TMR1_Counter16BitGet
+                  0x003356                  _TMR1_Counter16BitSet
+                  0x003386                  _TMR1_GetElapsedThenClear
+                  0x003306                  _TMR1_Initialize
+                  0x00334e                  _TMR1_Period16BitGet
+                  0x00333c                  _TMR1_Period16BitSet
+                  0x0033aa                  _TMR1_SoftwareCounterClear
+                  0x00339e                  _TMR1_SoftwareCounterGet
+                  0x003370                  _TMR1_Start
+                  0x00337e                  _TMR1_Stop
+                  0x00331c                  _TMR1_Tasks_16BitOperation
+                  0x0032b8                  _TMR2_Counter16BitGet
+                  0x0032a6                  _TMR2_Counter16BitSet
+                  0x0032d6                  _TMR2_GetElapsedThenClear
+                  0x003254                  _TMR2_Initialize
+                  0x00329e                  _TMR2_Period16BitGet
+                  0x00328c                  _TMR2_Period16BitSet
+                  0x0032fa                  _TMR2_SoftwareCounterClear
+                  0x0032ee                  _TMR2_SoftwareCounterGet
+                  0x0032c0                  _TMR2_Start
+                  0x0032ce                  _TMR2_Stop
+                  0x00326a                  _TMR2_Tasks_16BitOperation
+                  0x0033b6                  _UART1_Initialize
+                  0x0033ce                  _UART1_Read
+                  0x003410                  _UART1_StatusGet
+                  0x0033f8                  _UART1_Write
                   0x001e96                  _VLine
                   0x000222                  __AddressError
                   0x000f5a                  __Atexit
@@ -630,7 +630,7 @@ External Symbols in Program Memory (by name):
                   0x001116                  ___Putfld_cdnopuxX
                   0x0006b0                  ___adddf3
                   0x0002fe                  ___addsf3
-                  0x003496                  ___delay32
+                  0x00349c                  ___delay32
                   0x00198a                  ___divdi3
                   0x0017fe                  ___divsi3
                   0x0007ac                  ___eqdf2
@@ -680,14 +680,14 @@ External Symbols in Program Memory (by name):
                   0x001de0                  _boundaryCheck
                   0x001aca                  _chipinit
                   0x001c5a                  _clearScreen
-                  0x0024e2                  _clearTMR1
+                  0x0024e8                  _clearTMR1
                   0x001c3a                  _colorSpace
                   0x0003b8                  _cos
                   0x0003b8                  _cosl
                   0x0020cc                  _drawCircle
-                  0x00264a                  _drawClock
-                  0x00265a                  _drawClockFace
-                  0x0027de                  _drawClockHands
+                  0x002650                  _drawClock
+                  0x002660                  _drawClockFace
+                  0x0027e4                  _drawClockHands
                   0x001d84                  _drawFastHLine
                   0x001e02                  _drawFastVLine
                   0x0021f2                  _drawFillCircle
@@ -701,26 +701,26 @@ External Symbols in Program Memory (by name):
                   0x000c3c                  _fputc
                   0x000e3c                  _free
                   0x00133a                  _fwrite
-                  0x0024ee                  _getStoreImage
-                  0x002b9e                  _main
+                  0x0024f4                  _getStoreImage
+                  0x002ba4                  _main
                   0x000f06                  _malloc
                   0x0013e2                  _memchr
                   0x0013f6                  _memcpy
                   0x001a55                  _nGammaSet
                   0x001a46                  _pGammaSet
                   0x000c38                  _putchar
-                  0x00248e                  _readByte
+                  0x002494                  _readByte
                   0x00230c                  _resetChip
                   0x001c80                  _setAddrWindow
                   0x001cf0                  _setRotation
-                  0x0027aa                  _setup_clock
+                  0x0027b0                  _setup_clock
                   0x00054c                  _sin
                   0x00054c                  _sinl
                   0x001404                  _strchr
                   0x0020b2                  _swap
                   0x0002b8                  _write
-                  0x0023ee                  _write128Byte
-                  0x00244c                  _writeByte
+                  0x0023f4                  _write128Byte
+                  0x002452                  _writeByte
                   0x000e26                  fclose.DA_eo:_closeall
                   0x000f86                  printf_cdnopuxX.DAeo:_prout
 
@@ -1074,7 +1074,7 @@ __FDEVOPT1
  *(.comment)
  .comment         0x000000         0x5e c:/program files (x86)/microchip/xc16/v1.35/bin/bin/../../lib\liblega-c-elf.a(xfiles.DA_eo)
 
-.debug_info       0x000000       0x6dbf
+.debug_info       0x000000       0x6dc9
  *(.debug_info)
  .debug_info      0x000000        0x3f5 build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_info      0x0003f5        0x411 build/default/debug/mcc_generated_files/traps.o
@@ -1088,7 +1088,7 @@ __FDEVOPT1
  .debug_info      0x003f06        0x901 build/default/debug/mcc_generated_files/spi2.o
  .debug_info      0x004807        0x722 build/default/debug/mcc_generated_files/uart1.o
  .debug_info      0x004f29        0x75d build/default/debug/mcc_generated_files/tmr1.o
- .debug_info      0x005686       0x1739 build/default/debug/main.o
+ .debug_info      0x005686       0x1743 build/default/debug/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0xfb6
@@ -3631,8 +3631,8 @@ __c30_signature
                     0x9a46                  _pGammaSet
                     0x9a55                  _nGammaSet
 
-.text             0x001aca       0x1692
- .text            0x001aca       0x10ee build/default/debug/main.o
+.text             0x001aca       0x1698
+ .text            0x001aca       0x10f4 build/default/debug/main.o
                   0x001aca                  _chipinit
                   0x001c3a                  _colorSpace
                   0x001c5a                  _clearScreen
@@ -3652,101 +3652,101 @@ __c30_signature
                   0x00230c                  _resetChip
                   0x002328                  _drawFillRect
                   0x00236a                  _drawImage
-                  0x0023ee                  _write128Byte
-                  0x00244c                  _writeByte
-                  0x00248e                  _readByte
-                  0x0024e2                  _clearTMR1
-                  0x0024ee                  _getStoreImage
-                  0x00264a                  _drawClock
-                  0x00265a                  _drawClockFace
-                  0x0027aa                  _setup_clock
-                  0x0027de                  _drawClockHands
-                  0x002b9e                  _main
- .text            0x002bb8        0x1c6 build/default/debug/mcc_generated_files/spi1.o
-                  0x002bb8                  _SPI1_Initialize
-                  0x002bd6                  _SPI1_Exchange
-                  0x002c02                  _SPI1_ExchangeBuffer
-                  0x002ccc                  _SPI1D_ExchangeColor
-                  0x002cfa                  _SPI1D_Exchange8bit
-                  0x002d12                  _SPI1C_Exchange8bit
-                  0x002d28                  _SPI1_WR8bit
-                  0x002d3e                  _SPI1_Exchange8bitBuffer
-                  0x002d52                  _SPI1_TransferModeGet
-                  0x002d76                  _SPI1_StatusGet
- .text            0x002d7e        0x16c build/default/debug/mcc_generated_files/oc3.o
-                  0x002d7e                  _OC3_Initialize
-                  0x002d9c                  _OC3_Tasks
-                  0x002dae                  _OC3_Start
-                  0x002dc8                  _OC3_Stop
-                  0x002dd6                  _OC3_SingleCompareValueSet
-                  0x002de2                  _OC3_DualCompareValueSet
-                  0x002df4                  _OC3_CentreAlignedPWMConfig
-                  0x002e06                  _OC3_EdgeAlignedPWMConfig
-                  0x002e18                  _OC3_SecondaryValueSet
-                  0x002e24                  _OC3_PrimaryValueSet
-                  0x002e30                  _OC3_IsCompareCycleComplete
-                  0x002e48                  _OC3_FaultStatusGet
-                  0x002e9e                  _OC3_FaultStatusClear
-                  0x002ec2                  _OC3_ManualTriggerSet
-                  0x002eca                  _OC3_TriggerStatusGet
-                  0x002ee2                  _OC3_TriggerStatusClear
- .text            0x002eea        0x166 build/default/debug/mcc_generated_files/spi2.o
-                  0x002eea                  _SPI2_Initialize
-                  0x002f06                  _SPI2_Exchange
-                  0x002f36                  _SPI2_ExchangeBuffer
-                  0x003000                  _SPI2_Exchange8bit
-                  0x003010                  _SPI2_Exchange8bitBuffer
-                  0x003024                  _SPI2_TransferModeGet
-                  0x003048                  _SPI2_StatusGet
- .text            0x003050        0x10c build/default/debug/mcc_generated_files/pin_manager.o
-                  0x003050                  _PIN_MANAGER_Initialize
+                  0x0023f4                  _write128Byte
+                  0x002452                  _writeByte
+                  0x002494                  _readByte
+                  0x0024e8                  _clearTMR1
+                  0x0024f4                  _getStoreImage
+                  0x002650                  _drawClock
+                  0x002660                  _drawClockFace
+                  0x0027b0                  _setup_clock
+                  0x0027e4                  _drawClockHands
+                  0x002ba4                  _main
+ .text            0x002bbe        0x1c6 build/default/debug/mcc_generated_files/spi1.o
+                  0x002bbe                  _SPI1_Initialize
+                  0x002bdc                  _SPI1_Exchange
+                  0x002c08                  _SPI1_ExchangeBuffer
+                  0x002cd2                  _SPI1D_ExchangeColor
+                  0x002d00                  _SPI1D_Exchange8bit
+                  0x002d18                  _SPI1C_Exchange8bit
+                  0x002d2e                  _SPI1_WR8bit
+                  0x002d44                  _SPI1_Exchange8bitBuffer
+                  0x002d58                  _SPI1_TransferModeGet
+                  0x002d7c                  _SPI1_StatusGet
+ .text            0x002d84        0x16c build/default/debug/mcc_generated_files/oc3.o
+                  0x002d84                  _OC3_Initialize
+                  0x002da2                  _OC3_Tasks
+                  0x002db4                  _OC3_Start
+                  0x002dce                  _OC3_Stop
+                  0x002ddc                  _OC3_SingleCompareValueSet
+                  0x002de8                  _OC3_DualCompareValueSet
+                  0x002dfa                  _OC3_CentreAlignedPWMConfig
+                  0x002e0c                  _OC3_EdgeAlignedPWMConfig
+                  0x002e1e                  _OC3_SecondaryValueSet
+                  0x002e2a                  _OC3_PrimaryValueSet
+                  0x002e36                  _OC3_IsCompareCycleComplete
+                  0x002e4e                  _OC3_FaultStatusGet
+                  0x002ea4                  _OC3_FaultStatusClear
+                  0x002ec8                  _OC3_ManualTriggerSet
+                  0x002ed0                  _OC3_TriggerStatusGet
+                  0x002ee8                  _OC3_TriggerStatusClear
+ .text            0x002ef0        0x166 build/default/debug/mcc_generated_files/spi2.o
+                  0x002ef0                  _SPI2_Initialize
+                  0x002f0c                  _SPI2_Exchange
+                  0x002f3c                  _SPI2_ExchangeBuffer
+                  0x003006                  _SPI2_Exchange8bit
+                  0x003016                  _SPI2_Exchange8bitBuffer
+                  0x00302a                  _SPI2_TransferModeGet
+                  0x00304e                  _SPI2_StatusGet
+ .text            0x003056        0x10c build/default/debug/mcc_generated_files/pin_manager.o
+                  0x003056                  _PIN_MANAGER_Initialize
 
-.dinit            0x00315c         0xf2
- .dinit           0x00315c         0xf2 data_init
+.dinit            0x003162         0xf2
+ .dinit           0x003162         0xf2 data_init
 
-.text             0x00324e        0x248
- .text            0x00324e         0xb2 build/default/debug/mcc_generated_files/tmr2.o
-                  0x00324e                  _TMR2_Initialize
-                  0x003264                  _TMR2_Tasks_16BitOperation
-                  0x003286                  _TMR2_Period16BitSet
-                  0x003298                  _TMR2_Period16BitGet
-                  0x0032a0                  _TMR2_Counter16BitSet
-                  0x0032b2                  _TMR2_Counter16BitGet
-                  0x0032ba                  _TMR2_Start
-                  0x0032c8                  _TMR2_Stop
-                  0x0032d0                  _TMR2_GetElapsedThenClear
-                  0x0032e8                  _TMR2_SoftwareCounterGet
-                  0x0032f4                  _TMR2_SoftwareCounterClear
- .text            0x003300         0xb0 build/default/debug/mcc_generated_files/tmr1.o
-                  0x003300                  _TMR1_Initialize
-                  0x003316                  _TMR1_Tasks_16BitOperation
-                  0x003336                  _TMR1_Period16BitSet
-                  0x003348                  _TMR1_Period16BitGet
-                  0x003350                  _TMR1_Counter16BitSet
-                  0x003362                  _TMR1_Counter16BitGet
-                  0x00336a                  _TMR1_Start
-                  0x003378                  _TMR1_Stop
-                  0x003380                  _TMR1_GetElapsedThenClear
-                  0x003398                  _TMR1_SoftwareCounterGet
-                  0x0033a4                  _TMR1_SoftwareCounterClear
- .text            0x0033b0         0x62 build/default/debug/mcc_generated_files/uart1.o
-                  0x0033b0                  _UART1_Initialize
-                  0x0033c8                  _UART1_Read
-                  0x0033f2                  _UART1_Write
-                  0x00340a                  _UART1_StatusGet
- .text            0x003412         0x42 build/default/debug/mcc_generated_files/clock.o
-                  0x003412                  _CLOCK_Initialize
- .text            0x003454         0x42 build/default/debug/mcc_generated_files/mcc.o
-                  0x003454                  _OSCILLATOR_Initialize
+.text             0x003254        0x248
+ .text            0x003254         0xb2 build/default/debug/mcc_generated_files/tmr2.o
+                  0x003254                  _TMR2_Initialize
+                  0x00326a                  _TMR2_Tasks_16BitOperation
+                  0x00328c                  _TMR2_Period16BitSet
+                  0x00329e                  _TMR2_Period16BitGet
+                  0x0032a6                  _TMR2_Counter16BitSet
+                  0x0032b8                  _TMR2_Counter16BitGet
+                  0x0032c0                  _TMR2_Start
+                  0x0032ce                  _TMR2_Stop
+                  0x0032d6                  _TMR2_GetElapsedThenClear
+                  0x0032ee                  _TMR2_SoftwareCounterGet
+                  0x0032fa                  _TMR2_SoftwareCounterClear
+ .text            0x003306         0xb0 build/default/debug/mcc_generated_files/tmr1.o
+                  0x003306                  _TMR1_Initialize
+                  0x00331c                  _TMR1_Tasks_16BitOperation
+                  0x00333c                  _TMR1_Period16BitSet
+                  0x00334e                  _TMR1_Period16BitGet
+                  0x003356                  _TMR1_Counter16BitSet
+                  0x003368                  _TMR1_Counter16BitGet
+                  0x003370                  _TMR1_Start
+                  0x00337e                  _TMR1_Stop
+                  0x003386                  _TMR1_GetElapsedThenClear
+                  0x00339e                  _TMR1_SoftwareCounterGet
+                  0x0033aa                  _TMR1_SoftwareCounterClear
+ .text            0x0033b6         0x62 build/default/debug/mcc_generated_files/uart1.o
+                  0x0033b6                  _UART1_Initialize
+                  0x0033ce                  _UART1_Read
+                  0x0033f8                  _UART1_Write
+                  0x003410                  _UART1_StatusGet
+ .text            0x003418         0x42 build/default/debug/mcc_generated_files/clock.o
+                  0x003418                  _CLOCK_Initialize
+ .text            0x00345a         0x42 build/default/debug/mcc_generated_files/mcc.o
+                  0x00345a                  _OSCILLATOR_Initialize
 
-.init.delay32     0x003496         0x1c
- .init.delay32    0x003496         0x1c c:/program files (x86)/microchip/xc16/v1.35/bin/bin/../../lib\liblega-pic30-elf.a(delay32da.Leo)
-                  0x003496                  ___delay32
+.init.delay32     0x00349c         0x1c
+ .init.delay32    0x00349c         0x1c c:/program files (x86)/microchip/xc16/v1.35/bin/bin/../../lib\liblega-pic30-elf.a(delay32da.Leo)
+                  0x00349c                  ___delay32
 
-.text             0x0034b2         0x40
- .text            0x0034b2         0x18 build/default/debug/mcc_generated_files/traps.o
-                  0x0034b2                  _TRAPS_halt_on_error
- .text            0x0034ca         0x18 build/default/debug/mcc_generated_files/system.o
-                  0x0034ca                  _SYSTEM_Initialize
- .text            0x0034e2         0x10 build/default/debug/mcc_generated_files/interrupt_manager.o
-                  0x0034e2                  _INTERRUPT_Initialize
+.text             0x0034b8         0x40
+ .text            0x0034b8         0x18 build/default/debug/mcc_generated_files/traps.o
+                  0x0034b8                  _TRAPS_halt_on_error
+ .text            0x0034d0         0x18 build/default/debug/mcc_generated_files/system.o
+                  0x0034d0                  _SYSTEM_Initialize
+ .text            0x0034e8         0x10 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x0034e8                  _INTERRUPT_Initialize

@@ -581,7 +581,7 @@ void drawFillRect( uint8_t  x0, uint8_t  y0, uint8_t x1, uint8_t y1, uint16_t c 
 
 void drawImage(void)
 {
-    uint16_t size16, x;
+    uint16_t size16, x, b;
     uint8_t data8, start8;
     uint32_t addr32 ,size32, n32;
     
@@ -596,8 +596,8 @@ void drawImage(void)
             
      setAddrWindow(0,0,_GRAMWIDTH - 1, _GRAMHEIGH - 1);
 
-     
-     for(n32 = 0 ; n32 < size16 ; n32 +=2)
+    
+     for(n32 = 0 ; n32 < (size16 - start8) ; n32 +=2)
         {
          
          x = readByte(n32 + start8) ;
